@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f3">
+  <title>ชุมชนช่วยกัน — แจ้งปัญหา ติดตามได้</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Kanit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement"><span><i></i> กระดานข่าวชุมชน</span><span>พบปัญหาในละแวกบ้าน? <a href="#report">ร่วมแจ้งเรื่อง <b>↗</b></a></span></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="ชุมชนช่วยกัน หน้าแรก"><span class="brand-mark">ช</span><span>ชุมชน<span class="brand-light">ช่วยกัน</span></span></a>
+    <nav><a href="#issues">รายการปัญหา</a><a href="#how">วิธีใช้งาน</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="เปลี่ยนเป็นโหมดมืด"><span aria-hidden="true">◐</span><span class="theme-label">โหมดมืด</span></button><a class="nav-cta" href="#report">＋ แจ้งปัญหา</a></nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>เรื่องใกล้บ้าน<br>ช่วยกัน<span class="highlight">จัดการ</span>ได้</h1>
+        <div class="hero-actions"><a class="button primary" href="#report">＋ แจ้งปัญหา</a><a class="text-link" href="#issues">ดูเรื่องที่กำลังติดตาม</a></div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="สรุปสถานะปัญหา">
+      <div class="stat-intro"><span class="section-kicker">ภาพรวมชุมชน</span><b>สถานะล่าสุด<br>ของรายงาน</b></div>
+      <div class="stat"><span class="stat-icon icon-yellow">◷</span><div><strong id="stat-total">12</strong><small>ปัญหาทั้งหมด</small></div></div>
+      <div class="stat"><span class="stat-icon icon-blue">↻</span><div><strong id="stat-progress">4</strong><small>กำลังดำเนินการ</small></div></div>
+      <div class="stat"><span class="stat-icon icon-green">✓</span><div><strong id="stat-done">6</strong><small>แก้ไขแล้ว</small></div></div>
+      <div class="stat-footnote">ข้อมูลรายงาน<br><b>จากชุมชนของเรา</b></div>
+    </section>
+
+    <section class="issues-section" id="issues">
+      <div class="section-heading"><div><span class="section-kicker">กระดานติดตาม</span><h2>เรื่องที่คนในชุมชนแจ้ง</h2><p>ดูสถานะล่าสุด แล้วช่วยกันติดตามเรื่องที่สำคัญกับพื้นที่</p></div></div>
+      <div class="filters" aria-label="ตัวกรองรายการปัญหา">
+        <label class="filter-select-label" for="category-filter">ประเภทปัญหา</label>
+        <select class="filter-select" id="category-filter"><option value="ทั้งหมด">ทุกประเภท</option><option>ถนนและทางเท้า</option><option>ความสะอาด</option><option>ไฟฟ้าและแสงสว่าง</option><option>พื้นที่สาธารณะ</option></select>
+        <label class="filter-select-label" for="status-filter">สถานะของงาน</label>
+        <select class="filter-select" id="status-filter"><option value="ทั้งหมด">ทุกสถานะ</option><option>รอตรวจสอบ</option><option>กำลังดำเนินการ</option><option>แก้ไขแล้ว</option></select>
+      </div>
+      <div class="issue-grid" id="issue-grid"></div>
+      <div class="empty-state" id="empty-state" hidden>กำลังโหลดรายการ...</div>
+      <div class="demo-note"><span>ⓘ</span> รายงานและสถานะดึงจากฐานข้อมูลของชุมชน ผู้เข้าชมจึงเห็นข้อมูลชุดเดียวกัน</div>
+    </section>
+
+    <section class="how-section" id="how"><div class="how-intro"><span class="section-kicker">วิธีใช้งาน</span><h2>จากเรื่องที่พบ<br>สู่การติดตามร่วมกัน</h2><p>ทุกขั้นตอนอยู่ในที่เดียว ตั้งแต่แจ้งปัญหาจนเห็นความคืบหน้า</p></div><div class="steps"><article><span class="step-no">01</span><div class="step-icon">＋</div><h3>บอกให้รู้</h3><p>ระบุหัวข้อ ประเภท และจุดที่พบปัญหาให้ชัดเจน</p></article><article><span class="step-no">02</span><div class="step-icon">↗</div><h3>ติดตามสถานะ</h3><p>ดูว่ารายงานรอตรวจสอบ กำลังดำเนินการ หรือแก้ไขแล้ว</p></article><article><span class="step-no">03</span><div class="step-icon">♡</div><h3>ร่วมส่งเสียง</h3><p>สนับสนุนเรื่องที่กระทบพื้นที่ เพื่อช่วยกันชี้ให้เห็นความสำคัญ</p></article></div></section>
+
+    <section class="report-section" id="report"><div class="report-copy"><span class="section-kicker">ร่วมเพิ่มรายงาน</span><h2>พบอะไรในละแวกบ้าน<br>เล่าให้ชุมชนฟัง</h2><p>ใส่หัวข้อ ประเภท และสถานที่ เพื่อให้คนอื่นเข้าใจตรงกันและช่วยติดตามได้</p><div class="report-promise"><span>✓</span> ไม่ต้องสมัครสมาชิก</div><div class="report-promise"><span>✓</span> ผู้เข้าชมเห็นรายการเดียวกัน</div></div>
+      <form id="report-form" class="report-form"><div class="form-head"><div><b>แจ้งปัญหาใหม่</b><small>กรอกข้อมูลสั้น ๆ เพื่อเริ่มต้น</small></div><span class="form-spark">✳</span></div>
+        <label for="title">หัวข้อปัญหา <em>*</em></label><input id="title" name="title" placeholder="เช่น ไฟถนนหน้าปากซอยดับ" required maxlength="80">
+        <div class="form-row"><div><label for="category">ประเภทปัญหา <em>*</em></label><select id="category" name="category" required><option value="">เลือกประเภท</option><option>ถนนและทางเท้า</option><option>ความสะอาด</option><option>ไฟฟ้าและแสงสว่าง</option><option>พื้นที่สาธารณะ</option></select></div><div><label for="location">สถานที่ <em>*</em></label><input id="location" name="location" placeholder="เช่น ซอย 3" required maxlength="60"></div></div>
+        <label for="description">รายละเอียดเพิ่มเติม</label><textarea id="description" name="description" placeholder="เล่าสิ่งที่พบเพื่อให้เข้าใจปัญหามากขึ้น..." rows="3" maxlength="300"></textarea>
+        <button class="button primary submit-button" type="submit">ส่งเรื่องให้ชุมชน <span>↗</span></button><small class="form-disclaimer">ข้อมูลจะถูกบันทึกในฐานข้อมูล เพื่อให้ชุมชนติดตามร่วมกัน</small>
+      </form></section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-mark">ช</span><span>ชุมชน<span class="brand-light">ช่วยกัน</span></span></a><span>โปรเจกต์ตัวอย่างเพื่อการเรียนรู้ · ทำด้วยความร่วมมือของทุกคน</span><a href="#home">กลับขึ้นด้านบน ↑</a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
